@@ -1,0 +1,13 @@
+<!--page/zhuye/test/test.wxml-->
+<view class="container">
+    <view class="page-body1" style="flex-grow:1">
+        <view style="display: flex;min-height:200px;">
+            <view class="page-body1" style="background-color: red;flex-grow:1">
+            </view>
+            <view class="page-body1" style="background-color: gray;flex-grow:1">
+            </view>
+        </view>
+    </view>
+    <view class="page-body1" style="background-color: green;flex-grow:1">
+    </view>
+</view>

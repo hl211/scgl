@@ -1,0 +1,85 @@
+/* page/zhuye/index.wxss */
+
+@import "../common/lib/weui.wxss";
+.flex {
+    display: flex;
+}
+
+.center {
+    justify-content: space-around;
+}
+
+.nav-list-item {
+    margin: 10rpx 30rpx;
+    background-color: #FFFFFF;
+    border-radius: 4rpx;
+    overflow: hidden;
+    padding: 5rpx;
+}
+
+.nav-list-item.text {
+    margin: 10rpx 30rpx;
+    background-color: #FFFFFF;
+    border-radius: 4rpx;
+    overflow: hidden;
+    padding: 5rpx;
+}
+
+
+.kind-list-item {
+    margin: 20rpx 30rpx;
+    height: 220rpx;
+    background-color: #FFFFFF;
+    border-radius: 4rpx;
+    overflow: hidden;
+    padding: 5rpx;
+}
+
+.item {}
+
+.bg1 {
+    width: 30%;
+    padding: 10rpx;
+}
+
+.bg2 {
+    width: 50%;
+}
+
+.bg3 {
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg21 {
+    height: 25%;
+    font-size: 20px;
+    padding-top: 10rpx;
+    text-align: center;
+}
+
+.bg22 {
+    height: 15%;
+    padding-left: 30rpx;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 5rpx;
+}
+
+.bg23 {
+    height: 35%;
+    font-size: 12px;
+    padding-left: 30rpx;
+    padding-top: 5rpx;
+    text-align: left;
+    line-height: 1.1;
+}
+
+.bg24 {
+    height: 25%;
+    font-size: 15px;
+    padding-left: 30rpx;
+    text-align: left;
+    padding-top: 5rpx;
+}

@@ -1,0 +1,4 @@
+/* page/zhuye/chaxun/chaxun.wxss */
+
+@import "../../common/index.wxss";
+@import "../../common/lib/weui.wxss";

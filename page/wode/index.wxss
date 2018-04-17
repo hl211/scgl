@@ -1,0 +1,23 @@
+/* page/wode/index.wxss */
+
+@import "../common/index.wxss";
+@import "../common/lib/weui.wxss";
+
+
+.top {}
+
+.userinfo {
+    top: 40rpx;
+    width: 100%;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+}
+
+.userimg {
+    width: 200rpx;
+    height: 200rpx;
+    border: 0 solid #ff0000;
+    border-radius: 100rpx;
+    margin-top: 40rpx;
+}

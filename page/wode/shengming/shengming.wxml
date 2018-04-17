@@ -1,0 +1,13 @@
+<!--page/wode/shengming/shengming.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view style=" display:flex;flex-direction: column;align-items: center;">
+            <view style="margin: 30px">
+                <text>郑重声明</text>
+            </view>
+            <view style="margin: 30px">
+                <text>所有数据来自互联网，仅有参考价值，由此产生的后果由自己负责，该小程序概不负责！</text>
+            </view>
+        </view>
+    </view>
+</view>

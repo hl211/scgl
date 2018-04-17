@@ -1,0 +1,56 @@
+<!--page/zhuye/index.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view style="position: fixed;right: 0px;bottom: 0px" bindtap="bindChange">
+            <image style="width: 50px;height: 50px" src="../../image/icon_component.png" />
+        </view>
+        <view class="">
+            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for="{{imgUrls}}">
+                    <swiper-item>
+                        <image src="{{item}}" mode='scaleToFill' style="width:100%;height: 100%" />
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+        <view class="nav-list-item">
+            <view class="weui-flex center" style="flex-direction:row;">
+                <navigator url="guanzhu/guanzhu">
+                    <view class=""> 我的关注</view>
+                </navigator>
+                <navigator url="chaxun/chaxun">
+                    <view class=""> 查询</view>
+                </navigator>
+            </view>
+        </view>
+        <template name="msgItem">
+            <block wx:for-items="{{listItem}}" wx:for-item="item" wx:key="id">
+                <navigator url="test/test">
+                    <view class="weui-flex center kind-list-item" style="flex-direction:row;">
+                        <view class="bg1">
+                            <image src="{{item.imgSrc}}" mode="scaleToFill" style="width:100%;height: 98%;" />
+                        </view>
+                        <view class="weui-flex bg2" style="flex-direction:column">
+                            <view class="bg21">
+                                <text> {{item.name}}</text>
+                            </view>
+                            <view class="bg22">
+                                <text> 时间:{{ item.time }} </text>
+                            </view>
+                            <view class="bg23">
+                                <text>市场:{{ item.market }}</text>
+                            </view>
+                            <view class="bg24">
+                                <text> 单价:{{ item.price }} </text>
+                            </view>
+                        </view>
+                        <view class='weui-flex bg3'>
+                            <text>详情</text>
+                        </view>
+                    </view>
+                </navigator>
+            </block>
+        </template>
+        <template is="msgItem" data="{{listItem}}" />
+    </view>
+</view>

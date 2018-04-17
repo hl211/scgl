@@ -1,0 +1,32 @@
+<!--page/wode/index.wxml-->
+<view>
+    <view class="top">
+        <image style="width:100%" mode="aspectFill" src="../../image/weather.jpg"></image>
+        <view class="userinfo weui-flex">
+            <view>
+                <image class="userimg" mode="" src="{{avatarUrl}}" binderror="" bindload=""></image>
+            </view>
+            <view>
+                <text>{{nickName}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="mid">
+        <navigator url="jianyi/jianyi" class="navigator kind-list-item">
+            <view class="navigator-text">我的关注</view>
+            <view class="navigator-arrow"></view>
+        </navigator>
+        <navigator url="payment/payment" class="navigator kind-list-item">
+            <view class="navigator-text">打赏</view>
+            <view class="navigator-arrow"></view>
+        </navigator>
+        <navigator url="jianyi/jianyi" class="navigator kind-list-item">
+            <view class="navigator-text">建议</view>
+            <view class="navigator-arrow"></view>
+        </navigator>
+        <navigator url="shengming/shengming" class="navigator kind-list-item">
+            <view class="navigator-text">声明</view>
+            <view class="navigator-arrow"></view>
+        </navigator>
+    </view>
+</view>

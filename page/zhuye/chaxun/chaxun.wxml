@@ -1,0 +1,43 @@
+<!--page/zhuye/chaxun/chaxun.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view class="page-section page-section-gap">
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label" style="width: 55px;">市场:</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindMarketChange" value="{{mindex}}" range="{{market}}">
+                            <view class="weui-input">{{market[mindex]}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">时间:</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+                            <view class="weui-input">{{date}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+            <view class="weui-cells weui-cells_after-title">
+                <view class="weui-cell weui-cell_input">
+                    <view class="weui-cell__hd">
+                        <view class="weui-label">蔬菜:</view>
+                    </view>
+                    <view class="weui-cell__bd">
+                        <picker bindchange="bindShopChange" value="{{sindex}}" range="{{shop}}" data-id="{{shop[sindex].id}}" range-key="{{'name'}}">
+                            <view class="weui-input">{{shop[sindex].name}}</view>
+                        </picker>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

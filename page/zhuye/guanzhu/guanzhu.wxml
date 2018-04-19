@@ -8,8 +8,13 @@
                     <text class='name'>{{item.name}}</text>
                 </view>
             </block>
-            <view class='item' style="width: {{winWidth}}px ;font-size: 20px">+</view>
+            <view class='item' style="width: {{winWidth}}px ;font-size: 20px">
+                <navigator url="../addgz/addgz">
+                    +
+                </navigator>
+            </view>
             <view class='item' style="width: {{winWidth}}px ;font-size: 40px" bindtap="del_date">-</view>
+            <view class='item' style="width: {{winWidth}}px ;font-size: 40px" bindtap="del_date">{{sc_id}}</view>
         </view>
     </view>
 </view>

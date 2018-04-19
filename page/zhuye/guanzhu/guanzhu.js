@@ -11,6 +11,7 @@ Page({
          */
         winWidth: 0,
         winHeight: 0,
+        sc_id: '',
 
         listItem: [{
             id: "11",

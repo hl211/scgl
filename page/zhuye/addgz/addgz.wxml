@@ -1,0 +1,9 @@
+<!--page/zhuye/addgz/addgz.wxml-->
+<!--page/zhuye/chaxun/chaxun.wxml-->
+<view class="container">
+    <view class="page-body">
+        <view class="page-section page-section-gap" data-name='pg' bindtap='scNameClick'>
+            苹果
+        </view>
+    </view>
+</view>

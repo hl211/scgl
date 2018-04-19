@@ -4,11 +4,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        imgUrls: [
-            '../../image/sc/11.jpg',
-            '../../image/sc/12.jpg',
-            '../../image/sc/13.jpg'
-        ],
+        slider: [{
+            picUrl: '../../image/sc/11.jpg',
+        }, {
+            picUrl: '../../image/sc/12.jpg',
+        }, {
+            picUrl: '../../image/sc/13.jpg',
+        }],
+        swiperCurrent: 0,
         listItem: [{
             id: "11",
             imgSrc: "../../image/sc/11.jpg",
@@ -30,65 +33,22 @@ Page({
             time: "2018-4-16",
             market: "云南通海金山蔬菜批发市场",
             price: "5元/kg"
-        }, {
-            id: "12",
-            imgSrc: "../../image/sc/13.jpg",
-            name: "西兰花",
-            time: "2018-4-16",
-            market: "云南通海金山蔬菜批发市场",
-            price: "5元/kg"
-        }, {
-            id: "12",
-            imgSrc: "../../image/sc/13.jpg",
-            name: "西兰花",
-            time: "2018-4-16",
-            market: "云南通海金山蔬菜批发市场",
-            price: "5元/kg"
-        }, {
-            id: "12",
-            imgSrc: "../../image/sc/13.jpg",
-            name: "西兰花",
-            time: "2018-4-16",
-            market: "云南通海金山蔬菜批发市场",
-            price: "5元/kg"
-        }, {
-            id: "12",
-            imgSrc: "../../image/sc/13.jpg",
-            name: "西兰花",
-            time: "2018-4-16",
-            market: "云南通海金山蔬菜批发市场",
-            price: "5元/kg"
         }],
 
+    },
 
-        indicatorDots: true,
-        vertical: false,
-        autoplay: true,
-        interval: 2000,
-        duration: 500
-    },
-    changeIndicatorDots: function(e) {
+    //轮播图的切换事件
+    swiperChange: function(e) {
+        //只要把切换后当前的index传给<swiper>组件的current属性即可
         this.setData({
-            indicatorDots: !this.data.indicatorDots
+            swiperCurrent: e.detail.current
         })
     },
-    changeAutoplay: function(e) {
+    //点击指示点切换
+    chuangEvent: function(e) {
         this.setData({
-            autoplay: !this.data.autoplay
+            swiperCurrent: e.currentTarget.id
         })
-    },
-    intervalChange: function(e) {
-        this.setData({
-            interval: e.detail.value
-        })
-    },
-    durationChange: function(e) {
-        this.setData({
-            duration: e.detail.value
-        })
-    },
-    bindChange: function(e) {
-        console.log(e)
     },
 
     /**

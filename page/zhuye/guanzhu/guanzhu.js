@@ -11,54 +11,51 @@ Page({
          */
         winWidth: 0,
         winHeight: 0,
-        // tab切换  
-        currentTab: 0,
 
         listItem: [{
             id: "11",
             imgSrc: "../../../image/sc/11.jpg",
             name: "土豆",
+            state: 0,
         }, {
             id: "12",
             imgSrc: "../../../image/sc/12.jpg",
             name: "花菜",
+            state: 0,
         }, {
             id: "12",
             imgSrc: "../../../image/sc/13.jpg",
             name: "西兰花",
+            state: 0,
         }, {
             id: "12",
             imgSrc: "../../../image/sc/13.jpg",
             name: "西兰花",
-        }, {
-            id: "12",
-            imgSrc: "../../../image/sc/13.jpg",
-            name: "西兰花",
+            state: 0,
         }],
     },
-    /** 
-     * 滑动切换tab 
-     */
-    bindChange: function(e) {
-        var that = this;
-        that.setData({
-            currentTab: e.detail.current
+    select_date: function(e) {
+        var index = e.currentTarget.dataset.key;
+
+        if (this.data.listItem[index].state == 1) {
+            this.data.listItem[index].state = 0;
+
+        } else if (this.data.listItem[index].state == 0) {
+            this.data.listItem[index].state = 1;
+
+        }
+        this.setData({
+            listItem: this.data.listItem,
+
         });
 
     },
-    /** 
-     * 点击tab切换 
-     */
-    swichNav: function(e) {
-
+    del_date: function(e) {
         var that = this;
-
-        if (this.data.currentTab === e.target.dataset.current) {
-            return false;
-        } else {
-            that.setData({
-                currentTab: e.target.dataset.current
-            })
+        for (let index in that.data.listItem) {
+            if (that.data.listItem[index].state === 1) {
+                console.log(that.data.listItem[index].name)
+            }
         }
     },
     /**
@@ -71,9 +68,9 @@ Page({
          */
         wx.getSystemInfo({
             success: function(res) {
-                console.log((res.windowWidth - 150) / 3);
+                console.log((res.windowWidth - 50) / 3);
                 that.setData({
-                    winWidth: (res.windowWidth - 50) / 3,
+                    winWidth: (res.windowWidth - 55) / 3,
                     winHeight: res.windowHeight
                 });
             }

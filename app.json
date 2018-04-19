@@ -72,7 +72,8 @@
         "page/zhuye/chaxun/chaxun",
         "page/news/index",
         "page/wode/shengming/shengming",
-        "page/zhuye/guanzhu/guanzhu"
+        "page/zhuye/guanzhu/guanzhu",
+        "page/fabu/index"
     ],
     "window":
     {
@@ -98,13 +99,13 @@
             "pagePath": "page/news/index",
             "iconPath": "image/icon_API.png",
             "selectedIconPath": "image/icon_API_HL.png",
-            "text": "发布"
+            "text": "新闻"
         },
         {
-            "pagePath": "page/news/index",
+            "pagePath": "page/fabu/index",
             "iconPath": "image/icon_API.png",
             "selectedIconPath": "image/icon_API_HL.png",
-            "text": "新闻"
+            "text": "发布"
         },
         {
             "pagePath": "page/weather/weather",

@@ -1,56 +1,70 @@
 <!--page/zhuye/index.wxml-->
 <view class="container">
     <view class="page-body">
-        <view style="position: fixed;right: 0px;bottom: 0px" bindtap="bindChange">
-            <image style="width: 50px;height: 50px" src="../../image/icon_component.png" />
-        </view>
-        <view class="">
-            <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-                <block wx:for="{{imgUrls}}">
-                    <swiper-item>
-                        <image src="{{item}}" mode='scaleToFill' style="width:100%;height: 100%" />
+        <!-- <view style="position: fixed;right: 0px;bottom: 0px" bindtap="bindChange">
+    <image style="width: 50px;height: 50px" src="../../image/icon_component.png" />
+</view> -->
+        <view class="swiper-container">
+            <swiper autoplay="auto" interval="5000" duration="500" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+                <block wx:for="{{slider}}" wx:key="unique">
+                    <swiper-item data-id="{{item.id}}" data-url="{{item.linkUrl}}">
+                        <image src="{{item.picUrl}}" class="img"></image>
                     </swiper-item>
                 </block>
             </swiper>
+            <view class="dots">
+                <block wx:for="{{slider}}" wx:key="unique">
+                    <view class="dot{{index == swiperCurrent ? ' active' : ''}}" bindtap="chuangEvent" id="{{index}}">{{index+1}}</view>
+                </block>
+            </view>
         </view>
-        <view class="nav-list-item">
-            <view class="weui-flex center" style="flex-direction:row;">
+        <view class="nav-list">
+            <view class="item">
                 <navigator url="guanzhu/guanzhu">
-                    <view class=""> 我的关注</view>
+                    我的关注
                 </navigator>
+            </view>
+            <view class='item'>
                 <navigator url="chaxun/chaxun">
-                    <view class=""> 查询</view>
+                    查询
                 </navigator>
             </view>
         </view>
         <template name="msgItem">
             <block wx:for-items="{{listItem}}" wx:for-item="item" wx:key="id">
                 <navigator url="test/test">
-                    <view class="weui-flex center kind-list-item" style="flex-direction:row;">
-                        <view class="bg1">
-                            <image src="{{item.imgSrc}}" mode="scaleToFill" style="width:100%;height: 98%;" />
+                    <view class="item">
+                        <view>
+                            <image src="{{item.imgSrc}}" mode="scaleToFill" class='item-img' />
                         </view>
-                        <view class="weui-flex bg2" style="flex-direction:column">
-                            <view class="bg21">
+                        <view class="item-cont">
+                            <view class="name">
                                 <text> {{item.name}}</text>
                             </view>
-                            <view class="bg22">
-                                <text> 时间:{{ item.time }} </text>
+                            <view class="time">
+                                <text> 时间: {{ item.time }} </text>
                             </view>
-                            <view class="bg23">
-                                <text>市场:{{ item.market }}</text>
+                            <view class="market">
+                                <text>市场: </text>
+                                <text>{{ item.market }}</text>
                             </view>
-                            <view class="bg24">
-                                <text> 单价:{{ item.price }} </text>
+                            <view class="price">
+                                <text> ￥ {{ item.price }} </text>
+                                <text> 点赞</text>
+                                <text class='more'>更多</text>
                             </view>
-                        </view>
-                        <view class='weui-flex bg3'>
-                            <text>详情</text>
                         </view>
                     </view>
                 </navigator>
             </block>
         </template>
-        <template is="msgItem" data="{{listItem}}" />
+        <view class='sc-list'>
+            <view class='person'>个人发布</view>
+            <template is="msgItem" data="{{listItem}}" />
+        </view>
+        <view class='sc-list'>
+            <view class='person'>网上数据</view>
+            <template is="msgItem" data="{{listItem}}" />
+        </view>
     </view>
 </view>

@@ -1,26 +1,15 @@
 <!--page/zhuye/guanzhu/guanzhu.wxml-->
-<view class="swiper-tab">
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">我的关注</view>
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">增加</view>
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">删除</view>
-</view>
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px " bindchange="bindChange">
-    <swiper-item>
-        <view class=".kind-list-item">
+<view class="container">
+    <view class="page-body">
+        <view class='sc-list'>
             <block wx:for-items="{{listItem}}" wx:for-item="item" wx:key="id">
-                <view class="bg1" style="width: {{winWidth}}px">
-                    <image class="img" src="{{item.imgSrc}}" mode='scaleToFill'> </image>
-                    <text style="font-size: 15px">{{item.name}}</text>
+                <view class="item  {{item.state===1?'active-tag':''}}" style="width: {{winWidth}}px " bindtap="select_date" data-key='{{index}}'>
+                    <image class="img " src="{{item.imgSrc}} " mode='scaleToFill'> </image>
+                    <text class='name'>{{item.name}}</text>
                 </view>
             </block>
+            <view class='item' style="width: {{winWidth}}px ;font-size: 20px">+</view>
+            <view class='item' style="width: {{winWidth}}px ;font-size: 40px" bindtap="del_date">-</view>
         </view>
-    </swiper-item>
-    <!-- 我是呵呵 -->
-    <swiper-item>
-        <view>我是呵呵</view>
-    </swiper-item>
-    <!-- 我是嘿嘿 -->
-    <swiper-item>
-        <view>我是嘿嘿</view>
-    </swiper-item>
-</swiper>
+    </view>
+</view>

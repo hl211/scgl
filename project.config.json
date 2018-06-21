@@ -1,5 +1,10 @@
 {
 	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": [
+			"README.md"
+		]
+	},
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
@@ -8,9 +13,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "1.9.98",
 	"appid": "wx652ecc58ea083829",
-	"projectname": "demo",
+	"projectname": "scgl",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

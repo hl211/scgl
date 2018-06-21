@@ -1,6 +1,8 @@
 <!--page/zhuye/guanzhu/guanzhu.wxml-->
 <view class="container">
     <view class="page-body">
+        <view class='sc-list'>添加请点击+号，删除请先点击图片，然后在点击-号
+        </view>
         <view class='sc-list'>
             <block wx:for-items="{{listItem}}" wx:for-item="item" wx:key="id">
                 <view class="item  {{item.state===1?'active-tag':''}}" style="width: {{winWidth}}px " bindtap="select_date" data-key='{{index}}'>
